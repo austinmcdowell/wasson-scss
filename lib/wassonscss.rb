@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "wassonscss/version"
-require "wassonscss/wasson.scss"
+require "vendor/assets/stylesheets/wasson.scss"
 
 module Wassonscss
   class Engine < ::Rails::Engine; end
