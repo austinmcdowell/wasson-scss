@@ -4,10 +4,6 @@ require_relative "wassonscss/version"
 require "wassonscss/wasson.scss"
 
 module Wassonscss
+  class Engine < ::Rails::Engine; end
   class Error < StandardError; end
-  class Dryer
-    def dry 
-      `say Sup`
-    end
-  end
 end
