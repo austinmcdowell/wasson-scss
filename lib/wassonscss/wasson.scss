@@ -1,0 +1,724 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0 20px;
+    list-style: none;
+}
+
+li {
+    text-decoration: none;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+// transitions
+
+.transition {
+    transition: .3s;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.03);
+}
+
+// layout
+
+.container {
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// landscape phones
+$small: 576px;
+
+// tablets
+$tablet: 768px;
+
+// laptops and small desktops
+$desktop: 992px;
+
+// large desktops
+$large-desktop: 1200px;
+
+[class^=col-] {
+    flex-basis: 100%;
+}
+
+@media (max-width: $small) {
+    .col-sm-none {
+        display: none;
+    }
+
+    @for $i from 1 through 50 {
+        $margin: $i + px;
+        .mt-sm-#{$i} {
+            margin-top: $margin;
+        }
+    }
+}
+
+@media (min-width: $small) {
+    @for $i from 1 through 6 {
+        .col-sm-#{$i} {
+            flex: 0 0 (100% / (6 / $i));
+        }
+    }
+
+    @for $i from 1 through 9 {
+        .offset-sm-#{$i} {
+            margin-left: 100% / (6 / $i);
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    @for $i from 1 through 8 {
+        .col-med-#{$i} {
+            flex: 0 0 (100% / (8 / $i));
+        }
+    }
+
+    @for $i from 1 through 9 {
+        .offset-med-#{$i} {
+            margin-left: 100% / (8 / $i);
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    @for $i from 1 through 10 {
+        .col-#{$i} {
+            flex: 0 0 (100% / (10 / $i));
+        }
+    }
+}
+
+@for $i from 1 through 9 {
+    .offset-#{$i} {
+        margin-left: 100% / (10 / $i);
+    }
+}
+
+// height and width by pixel classes 'h-15'
+@for $i from 1 through 900 {
+    $num: $i + px;
+
+    .h-#{$i} {
+        height: $num;
+    }
+
+    .w-#{$i} {
+        width: $num;
+    }
+}
+
+// margin classes 'm-100'
+@for $i from 1 to 200 {
+    $num: $i + px;
+    // margin all sides
+    .m-#{$i} {
+        margin: $num;
+    }
+
+    // margin top & bottom
+    .mtb-#{$i} {
+        margin: $num 0;
+    }
+
+    // margin left & right
+    .mlr-#{$i} {
+        margin: 0 $num;
+    }
+
+    // margin top
+    .mt-#{$i} {
+        margin-top: $num;
+    }
+
+    // margin bottom
+    .mb-#{$i} {
+        margin-bottom: $num;
+    }
+
+    // margin left
+    .ml-#{$i} {
+        margin-left: $num;
+    }
+
+    // margin right
+    .mr-#{$i} {
+        margin-right: $num;
+    }
+}
+
+// padding classes 'p-100'
+@for $i from 1 to 100 {
+    $num: $i + px;
+    // padding all sides
+    .p-#{$i} {
+        padding: $num;
+    }
+
+    // padding top & bottom
+    .ptb-#{$i} {
+        padding-top: $num;
+        padding-bottom: $num;
+    }
+
+    // padding left & right
+    .plr-#{$i} {
+        padding-left: $num;
+        padding-right: $num;
+    }
+
+    // padding top
+    .pt-#{$i} {
+        padding-top: $num;
+    }
+
+    // padding bottom
+    .pb-#{$i} {
+        padding-bottom: $num;
+    }
+
+    // padding left
+    .pl-#{$i} {
+        padding-left: $num;
+    }
+
+    // padding right
+    .pr-#{$i} {
+        padding-right: $num;
+    }
+}
+
+// border-radius 'br-5'
+@for $i from 1 through 50 {
+    $radius: $i + px;
+    // border radius all sides
+    .br-#{$i} {
+        border-radius: $radius;
+    }
+
+    // border radius top left
+    .brtl-#{$i} {
+        border-top-left-radius: $radius;
+    }
+
+    // border radius top right
+    .brtr-#{$i} {
+        border-top-right-radius: $radius;
+    }
+
+    // border radius bottom left
+    .brbl-#{$i} {
+        border-bottom-left-radius: $radius;
+    }
+
+    // border radius bottom right
+    .brbr-#{$i} {
+        border-bottom-right-radius: $radius;
+    }
+}
+
+// border 
+@for $i from 1 through 15 {
+    .b-#{$i} {
+        border: $i solid;
+    }
+}
+
+// border-color
+.bc-light-gray {
+    border-color: rgb(235, 235, 235);
+}
+
+.bc-gray {
+    border-color: rgb(148, 148, 148);
+}
+
+.bc-gray-transparent {
+    border-color: rgba(148, 148, 148, .4);
+}
+
+
+
+.hover {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+// text align
+.ta-center {
+    text-align: center;
+}
+
+// display
+.flex {
+    display: flex;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+// navbar
+
+nav {
+    width: 100%;
+
+    font-family: 'Noto Sans JP';
+
+    display: flex;
+    vertical-align: middle;
+    z-index: 1000;
+}
+
+nav li {
+    display: inline-block;
+}
+
+.sticky-top {
+    position: fixed;
+    top: 0;
+}
+
+.sticky-bottom {
+    position: fixed;
+    bottom: 0;
+}
+
+.nav-white {
+    color: black;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.nav-transparent-bg {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.nav-light {
+    background-color: rgb(218, 218, 218);
+    color: black;
+}
+
+.nav-dark {
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+.nav-colored { 
+    background-color: white;
+    transition: .15s;
+ }
+.nav-transparent { 
+    background-color:transparent;
+    transition: .15s;
+}
+
+.shift-left {
+    margin-right: auto;
+}
+
+.shift-right {
+    justify-content: right;
+    margin-left: auto;
+}
+
+// .nav-logo {
+//     font-family: 'Noto Sans JP';
+//     font-weight: 700;
+
+//     text-decoration: none;
+//     vertical-align: middle;
+// }
+
+.nav-link {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+// fonts
+.noto-sans-jp {
+    font-family: 'Noto Sans JP';
+}
+
+.roboto {
+    font-family: 'Roboto';
+}
+
+.roboto-mono {
+    font-family: 'Roboto Mono';
+}
+
+.open-sans {
+    font-family: 'Open Sans';
+}
+
+.merriweather {
+    font-family: 'Merriweather';
+}
+
+// font weights
+.lighter {
+    font-weight: lighter;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+// font sizes - by pixel
+@for $i from 5 through 100 {
+    $font-size: $i + px;
+    .fs-#{$i} {
+        font-size: $font-size;
+    }
+}
+
+// font colors
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+.light-gray {
+    color: rgb(238, 238, 238);
+}
+
+.gray {
+    color: rgb(137, 147, 151);
+}
+
+.dark-gray {
+    color: rgb(96, 102, 107);
+}
+
+.light-red {
+    color: rgb(255, 174, 201);
+}
+
+.red {
+    color: rgb(255, 0, 34);
+}
+
+.dark-red {
+    color: rgb(97, 18, 28);
+}
+
+.light-orange {
+    color: rgb(255, 183, 174);
+}
+
+.orange {
+    color: rgb(211, 87, 71);
+}
+
+.dark-orange {
+    color: rgb(112, 33, 23);
+}
+
+.light-yellow {
+    color: rgb(238, 220, 160);
+}
+
+.yellow {
+    color: rgb(241, 191, 26);
+}
+
+.dark-yellow {
+    color: rgb(121, 92, 0);
+}
+
+.light-green {
+    color: rgb(97, 165, 150);
+}
+
+.green {
+    color: rgb(11, 100, 81);
+}
+
+.dark-green {
+    color: rgb(4, 51, 41);
+}
+
+.light-blue {
+    color: rgb(217, 240, 255);
+}
+
+.blue {
+    color: rgb(42, 145, 214);
+}
+
+.dark-blue {
+    color: rgb(33, 37, 41);
+}
+
+.light-purple {
+    color: rgb(182, 193, 241);
+}
+
+.purple {
+    color: rgb(42, 73, 214);
+}
+
+.dark-purple {
+    color: rgb(5, 33, 85);
+}
+
+
+// background colors
+
+.transparent-bg {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.light-gray-bg {
+    background-color: rgb(238, 238, 238);
+}
+
+.light-gray-blue-bg {
+    background-color: rgb(208, 218, 223);
+}
+
+.light-red-bg {
+    background-color: rgb(255, 174, 201);
+}
+
+.red-bg {
+    background-color: rgb(255, 0, 34);
+}
+
+.dark-red-bg {
+    background-color: rgb(97, 18, 28);
+}
+
+.light-orange-bg {
+    background-color: rgb(255, 183, 174);
+}
+
+.orange-bg {
+    background-color: rgb(211, 87, 71);
+}
+
+.dark-orange-bg {
+    background-color: rgb(112, 33, 23);
+}
+
+.light-yellow-bg {
+    background-color: rgb(238, 220, 160);
+}
+
+.yellow-bg {
+    background-color: rgb(241, 191, 26);
+}
+
+.dark-yellow-bg {
+    background-color: rgb(121, 92, 0);
+}
+
+.light-green-bg {
+    background-color: rgb(97, 165, 150);
+}
+
+.green-bg {
+    background-color: rgb(11, 100, 81);
+}
+
+.dark-green-bg {
+    background-color: rgb(4, 51, 41);
+}
+
+.light-blue-bg {
+    background-color: rgb(217, 240, 255);
+}
+
+.blue-bg {
+    background-color: rgb(42, 145, 214);
+}
+
+.dark-blue-bg {
+    background-color: rgb(33, 37, 41);
+}
+
+.light-purple-bg {
+    background-color: rgb(182, 193, 241);
+}
+
+.purple-bg {
+    background-color: rgb(42, 73, 214);
+}
+
+.dark-purple-bg {
+    background-color: rgb(5, 33, 85);
+}
+
+.btn {
+    padding: 8px;
+
+    border: none;
+    cursor: pointer;
+}
+
+.btn a {
+    text-decoration: none;
+}
+
+// rectangle
+
+// pill
+
+.pill {
+    border-radius: 5px;
+}
+
+// small
+
+.b-small {
+    padding: 6px 12x;
+    font-size: 12px;
+}
+
+// medium
+
+.b-med {
+    padding: 8px 15px;
+    font-size: 18px;
+}
+
+// large
+
+.b-large {
+    padding: 12px 25px;
+    font-size: 24px;
+}
+
+// colors
+
+.b-white {
+    background-color: white;
+    color: black;
+}
+
+.b-black {
+    color: white !important;
+    background-color: black;
+}
+
+.b-gray {
+    color: black;
+    background-color: rgb(42, 145, 214);
+}
+
+.b-red {
+    color: white;
+    background-color: rgb(255, 0, 34);
+}
+
+.b-orange {
+    color: white;
+    background-color: rgb(211, 87, 71);
+}
+
+.b-yellow {
+    color: black;
+    background-color: rgb(241, 191, 26);
+}
+
+.b-green {
+    color: white;
+    background-color: rgb(11, 100, 81);
+}
+
+.b-blue {
+    color: white;
+    background-color: rgb(42, 145, 214);
+}
+
+.b-purple {
+    color: white;
+    background-color: rgb(42, 73, 214);
+}
