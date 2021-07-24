@@ -69,7 +69,7 @@ $large-desktop: 1200px;
 }
 
 @media (min-width: $small) {
-    @for $i from 1 through 6 {
+    @for $i from 1 through 12 {
         .col-sm-#{$i} {
             flex: 0 0 (100% / (6 / $i));
         }
@@ -97,7 +97,7 @@ $large-desktop: 1200px;
 }
 
 @media (min-width: $desktop) {
-    @for $i from 1 through 10 {
+    @for $i from 1 through 20 {
         .col-#{$i} {
             flex: 0 0 (100% / (10 / $i));
         }

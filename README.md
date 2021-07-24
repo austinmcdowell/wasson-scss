@@ -45,7 +45,7 @@ to your application header.
 Step 3:
 Start adding classes to your views.
 
-Layout with dynamic rows, columns, margin, and padding
+Layout with dynamic rows, columns (up to 20), margin, and padding
 ```html
 <div class="container">
     <!-- margin-top: 35px; -->
