@@ -71,27 +71,27 @@ $large-desktop: 1200px;
 @media (min-width: $small) {
     @for $i from 1 through 12 {
         .col-sm-#{$i} {
-            flex: 0 0 (100% / (6 / $i));
+            flex: 0 0 (100% / (12 / $i));
         }
     }
 
-    @for $i from 1 through 9 {
+    @for $i from 1 through 11 {
         .offset-sm-#{$i} {
-            margin-left: 100% / (6 / $i);
+            margin-left: 100% / (11 / $i);
         }
     }
 }
 
 @media (min-width: $tablet) {
-    @for $i from 1 through 8 {
+    @for $i from 1 through 16 {
         .col-med-#{$i} {
-            flex: 0 0 (100% / (8 / $i));
+            flex: 0 0 (100% / (16 / $i));
         }
     }
 
-    @for $i from 1 through 9 {
+    @for $i from 1 through 18 {
         .offset-med-#{$i} {
-            margin-left: 100% / (8 / $i);
+            margin-left: 100% / (18 / $i);
         }
     }
 }
@@ -99,14 +99,14 @@ $large-desktop: 1200px;
 @media (min-width: $desktop) {
     @for $i from 1 through 20 {
         .col-#{$i} {
-            flex: 0 0 (100% / (10 / $i));
+            flex: 0 0 (100% / (20 / $i));
         }
     }
 }
 
-@for $i from 1 through 9 {
+@for $i from 1 through 19 {
     .offset-#{$i} {
-        margin-left: 100% / (10 / $i);
+        margin-left: 100% / (19 / $i);
     }
 }
 
